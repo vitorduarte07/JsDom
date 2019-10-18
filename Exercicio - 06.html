@@ -8,6 +8,7 @@
     <title>Document</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/css/jsdom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -102,7 +103,35 @@
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Exercício 06</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item" aria-current="page">Exercício 01</li>
+                        </ol>
+                    </nav>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Crie um algoritmo que leia dois valores inteiros distintos, ao final mostre qual é maior. </p>
+                    </div>
+                <form>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label for="valorUm">Valor 1</label>
+                            <input id="valorUm" type="number" class="form-control" required>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label for="valorDois">Valor 2</label>
+                            <input id="valorDois" type="number" class="form-control" required>
+                        </div>
+                        <div class="col-sm-12 col-md-2 col-lg-2 pt-30">
+                            <button type="button" class="btn btn-success" onclick="LerDoisValores()">Simular</button>
+                        </div>
+                    </div>
+                    <div class="row invisible" id="mensagemResultado">
+                        
+                    </div>
+                </form>
             </main>
             <!--#endregion-->
         </div>
@@ -110,6 +139,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="assets/js/exercicio06.js"></script>
     <script>
             feather.replace()
           </script>
