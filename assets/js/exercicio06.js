@@ -1,6 +1,6 @@
 function LerDoisValores() {
-    var valorUm = document.getElementById('valorUm').value;
-    var valorDois = document.getElementById('valorDois').value;
+    var valorUm = parseInt(document.getElementById('valorUm').value);
+    var valorDois = parseInt(document.getElementById('valorDois').value);
 
     if (valorUm > valorDois) {
         exibirMensagemSucesso();
@@ -23,6 +23,7 @@ function exibirMensagemSucesso(){
         mensagemResultado.innerHTML = html;
 }
 
+
 function exibirMensagemSucesso2(){
     let html = '<div class="col-sm-12 col-md-9 col-lg-9 pt-30">' +
     '<div class="alert alert-success" role="alert">' +
@@ -33,6 +34,7 @@ function exibirMensagemSucesso2(){
         mensagemResultado.className = 'row visible';
         mensagemResultado.innerHTML = html;
 }
+
 
 
 function exibirMensagemErro() {
