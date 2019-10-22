@@ -8,6 +8,7 @@
     <title>Document</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/css/jsdom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -115,7 +116,9 @@
                             líquido. A loja paga 10% de comissão em cima do total de vendas. O vendedor irá usar o
                             simulador informando: Seu salário base e o que ele vendeu no mês, o programa deverá calcular
                             e mostrar qual será o salário liquido dele no mês. Sobre o salário bruto do funcionário
-                            incide alguns descontos como INSS e <b data-toggle="tooltip" data-placement="bottom" title="O IRRF é uma antecipação do pagamento Imposto de Renda cobrado pela Receita Federal dos trabalhadores com carteira assinada.">IRRF</b>. </p>
+                            incide alguns descontos como INSS e <b data-toggle="tooltip" data-placement="bottom"
+                                title="O IRRF é uma antecipação do pagamento Imposto de Renda cobrado pela Receita Federal dos trabalhadores com carteira assinada.">IRRF</b>.
+                        </p>
                     </header>
                     <article class="col-sm-12 col-md-6">
                         <table class="table table-hover">
@@ -140,48 +143,70 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                     </article>
                     <article class="col-sm-12 col-md-6 ">
-                            <table class="table table-hover">
-                                    <thead>
-                                        <tr class="bg-light">
-                                            <th scope="col">BASE DE CALCULO(R$)</th>
-                                            <th scope="col">ALÍQUOTA IRRF(%)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Até 1.903,98</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>De 1.903,99 até 2.826,65</td>
-                                            <td>7,5%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>De 2.826,66 até 3.751,05</td>
-                                            <td>15%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>De 3.751,06 até 4.664,68</td>
-                                            <td>22,5%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Acima de 4.664,68</td>
-                                            <td>27,5%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th scope="col">BASE DE CALCULO(R$)</th>
+                                    <th scope="col">ALÍQUOTA IRRF(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Até 1.903,98</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>De 1.903,99 até 2.826,65</td>
+                                    <td>7,5%</td>
+                                </tr>
+                                <tr>
+                                    <td>De 2.826,66 até 3.751,05</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>De 3.751,06 até 4.664,68</td>
+                                    <td>22,5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Acima de 4.664,68</td>
+                                    <td>27,5%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-info" role="alert">
+                            O IRRF é calculado sobre o valor do salário bruto, subtraído o desconto do INSS.
+                        </div>
                     </article>
-                    <div class="alert">
 
-                    </div>
                 </section>
                 <form>
                     <div class="row">
-                        <div class="col-sm-12 col-md-4">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="form-group">
+                                <label for="nomeVendedor">Nome do vendedor</label>
+                                <input id="nomeVendedor" type="text" class="form-control" maxlength="10" required>
+                            </div>
                         </div>
+                        <div class="col-sm-12 col-md-3">
+                            <div class="form-group">
+                                <label for="salarioBase">Salario Base</label>
+                                <input id="salarioBase" type="number" class="form-control" maxlength="10" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3">
+                            <div class="form-group">
+                                <label for="totalVendas">Total de vendas no mês</label>
+                                <input id="totalVendas" type="number" class="form-control" maxlength="10" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2 pt-27">
+                                <div class="form-group">                              
+                                    <button type="button" class="btn btn-success" onclick="calcularSalarioLiquido()">Simular</button>
+                                </div>
+                            </div>
                     </div>
                 </form>
             </main>
