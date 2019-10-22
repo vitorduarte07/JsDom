@@ -43,7 +43,7 @@ $(function () {
         return 0.075 * salario - calcularINSS(salario);
       }else if (salario <= 2826.65){
         return 0.15 * salario - calcularINSS(salario);
-      }else if (salarioBruto <= 3751.05) {
+      }else if (salario <= 3751.05) {
         return 0.225 * salario - calcularINSS(salario);
       }else{
           return 0.275 / 100 * salario - calcularINSS(salario);
